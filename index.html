@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZERON ORGANİZASYON - Canlı Puan Durumu</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase SDK'ları (Canlı Veritabanı İçin) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    
+</head>
+<body>
+    <div id="app-container">
+        
+        <!-- Üst Kısım: Başlık ve Canlı Tarih/Sayaç Alanı -->
+        <header>
+            <div class="header-left">
+                <h1>ZERON ORGANİZASYON</h1>
+            </div>
+            <div class="header-right">
+                <span id="live-date"></span>
+                <!-- YÖNETİCİ SAYACI: Admin paneli açılana kadar sayımı gösterir. -->
+                <span id="click-counter">0/50</span>
+            </div>
+        </header>
+
+        <!-- Puan Durumu Tablosu Alanı -->
+        <div class="scoreboard-area">
+            
+            <!-- Tablo Başlıkları - YENİ: COLOR SÜTUNU EKLENDİ -->
+            <div class="table-header">
+                <span class="rank-col">RANK</span>
+                <span class="team-col">TEAM NAME</span>
+                <span class="color-col">COLOR</span>
+                <span class="total-col">TOTAL</span>
+                <span class="rank-col">RANK</span>
+                <span class="team-col">TEAM NAME</span>
+                <span class="color-col">COLOR</span>
+                <span class="total-col">TOTAL</span>
+            </div>
+            
+            <!-- 25 Puan Satırı Buraya Gelecek -->
+            <div id="score-rows">
+                <!-- JavaScript ile Doldurulacak -->
+            </div>
+        </div>
+
+        <!-- YÖNETİCİ DÜZENLEME ALANI (50 Tıklama ile Gizli Açılır) -->
+        <div class="admin-panel">
+            <h2>Yönetici Kontrol Paneli</h2>
+            <p class="ip-note">**Kullanım:** Bu panel, başlığa 50 kez tıklanarak etkinleştirilmiştir.</p>
+            <button id="toggle-edit-mode">Düzenleme Modunu Aç / Kapat</button>
+            <button id="save-data">Verileri Kaydet (Canlı Güncelle)</button>
+            <p class="warning">
+                UYARI: Düzenleme modu açıldığında, kutucuklara yeni değerler yazıp Kaydet butonuna basarak canlı yayını güncelleyebilirsiniz. Renk alanına geçerli bir HEX kodu (#FF0000 gibi) giriniz.
+            </p>
+        </div>
+        
+        <!-- ALT KISIM -->
+        <div class="footer-link-area">
+            <p>
+                <a href="https://www.instagram.com/channel/AbZQkLlACS31g8OC/" target="_blank">
+                    Eğlenceli Scrim Maçlarımıza Katılmak İsteyenler Link: https://www.instagram.com/channel/AbZQkLlACS31g8OC/
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
